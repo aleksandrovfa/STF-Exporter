@@ -64,13 +64,13 @@ namespace STFExporter
 
             Units pUnit = doc.GetUnits();
             FormatOptions formatOptions = pUnit.GetFormatOptions(SpecTypeId.Length);
-            ForgeTypeId curUnitType = formatOptions.GetUnitTypeId();
+            //ForgeTypeId curUnitType = formatOptions.GetUnitTypeId();
 
             using (Transaction tx = new Transaction(doc))
             {
                 tx.Start("STF EXPORT");
-                ForgeTypeId meters = SpecTypeId.Length;
-                formatOptions.SetUnitTypeId(curUnitType);
+                //ForgeTypeId meters = SpecTypeId.Length;
+                //formatOptions.SetUnitTypeId(curUnitType);
                 // Comment out, different in 2014
                 //formatOptions.Units = meters;
                 //formatOptions.Rounding = 0.0000000001;]
