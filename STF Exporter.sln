@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30413.136
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "STF Exporter2019", "STF Exporter2017\STF Exporter2019.csproj", "{F6641C72-3836-4D52-B3F3-179181839A00}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "STF Exporter2022", "STF Exporter2017\STF Exporter2022.csproj", "{F6641C72-3836-4D52-B3F3-179181839A00}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

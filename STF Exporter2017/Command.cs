@@ -44,7 +44,7 @@ namespace STFExporter
         public string writer = "";
         public double meterMultiplier = 0.3048;
         public List<ElementId> distinctLuminaires = new List<ElementId>();
-        public string stfVersionNum = "1.0.5";
+        public string stfVersionNum = "1.0.6";
         public bool intlVersion;
 
         public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
@@ -56,15 +56,23 @@ namespace STFExporter
             _app = app;
             _doc = doc;
             _ARdoc = doc;
-            //var link = new FilteredElementCollector(_doc).OfClass(typeof(RevitLinkInstance)).Where(r => r.Name.Contains("Ра") || r.Name.Contains("AR")).FirstOrDefault() as RevitLinkInstance;
-            //if (link != null && link.GetLinkDocument() != null)
-            //  _ARdoc = link.GetLinkDocument();
             // Set project units to Meters then back after
             // This is how DIALux reads the data from the STF File.
 
             Units pUnit = doc.GetUnits();
-            FormatOptions formatOptions = pUnit.GetFormatOptions(SpecTypeId.Length);
-            //ForgeTypeId curUnitType = formatOptions.GetUnitTypeId();
+            if (app.VersionNumber == "2019")
+            {
+                FormatOptions formatOptions = pUnit.GetFormatOptions(UnitType.UT_Length);
+                DisplayUnitType curUnitType = formatOptions.DisplayUnits;
+                const DisplayUnitType meters = DisplayUnitType.DUT_METERS;
+                formatOptions.DisplayUnits = meters;
+            }
+            else
+            {
+                FormatOptions formatOptions = pUnit.GetFormatOptions(SpecTypeId.Length);
+            }
+            //FormatOptions formatOptions = pUnit.GetFormatOptions(SpecTypeId.Length);
+
 
             using (Transaction tx = new Transaction(doc))
             {
