@@ -55,17 +55,19 @@
   <PropertyGroup>
     <DelaySign>false</DelaySign>
   </PropertyGroup>
+  <PropertyGroup>
+    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="PresentationCore" />
     <Reference Include="RevitAPI">
       <HintPath>C:\Program Files\Autodesk\Revit 2022\RevitAPI.dll</HintPath>
-      <Private>False</Private>
-      <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="RevitAPIUI">
       <HintPath>C:\Program Files\Autodesk\Revit 2022\RevitAPIUI.dll</HintPath>
-      <Private>False</Private>
-      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="RevitUIAPI">
+      <HintPath>C:\Program Files\Autodesk\Revit 2022\RevitUIAPI.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Windows.Forms" />

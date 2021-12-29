@@ -60,19 +60,7 @@ namespace STFExporter
             // This is how DIALux reads the data from the STF File.
 
             Units pUnit = doc.GetUnits();
-            if (app.VersionNumber == "2019")
-            {
-                FormatOptions formatOptions = pUnit.GetFormatOptions(UnitType.UT_Length);
-                DisplayUnitType curUnitType = formatOptions.DisplayUnits;
-                const DisplayUnitType meters = DisplayUnitType.DUT_METERS;
-                formatOptions.DisplayUnits = meters;
-            }
-            else
-            {
-                FormatOptions formatOptions = pUnit.GetFormatOptions(SpecTypeId.Length);
-            }
-            //FormatOptions formatOptions = pUnit.GetFormatOptions(SpecTypeId.Length);
-
+            FormatOptions formatOptions = pUnit.GetFormatOptions(SpecTypeId.Length);
 
             using (Transaction tx = new Transaction(doc))
             {
